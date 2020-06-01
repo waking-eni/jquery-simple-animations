@@ -12,18 +12,20 @@ $(document).ready(function(){
 	  
 	}, 5 );
 	
+	/*for the second part I'm using a function for dynamically added elements
+	  as the elements are moving constantly*/
+	  
 	//change the first one
 	var changeFontSize = false;
-	$(#'moving1').click(function() {
-		$(this).css('font-size', changeFontSize ? '35px' : '25px');
+	$(document).on('click', '#moving1', function(e) {
+		$(e.target).css('font-size', changeFontSize ? '35px' : '25px');
 		changeFontSize = !changeFontSize;
 	});
-
+	
 	//change the third one
 	var isItRed = false;
-	$(#'moving3').mouseover(function() {
+	$(document).on('mouseover', '#moving3', function(e) {
 		$(this).css('color', isItRed ? 'red' : 'black');
 		isItRed = !isItRed;
 	});
-
 });
